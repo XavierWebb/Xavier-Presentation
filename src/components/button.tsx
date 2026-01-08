@@ -27,6 +27,7 @@ type variantsType = 'first' | 'second'
 interface ButtonProps {
     variant?: variantsType,
     children: React.ReactNode,
+    onClick?: ()=>void,
 }
 const StyledButton = styled.button<{variant: variantsType}>`
     padding: 1rem 1.5rem;
@@ -70,10 +71,11 @@ const StyledButton = styled.button<{variant: variantsType}>`
 
 export const Button = ({
     variant = 'first',
-    children
+    children,
+    onClick,
 }: ButtonProps ) => {
     return (
-        <StyledButton variant={variant}>
+        <StyledButton variant={variant} onClick={onClick}>
             <p>{children}</p>
         </StyledButton>
     )

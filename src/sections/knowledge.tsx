@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { StyledText, StyledTittle } from "../components/texts"
+import {StyledTittle } from "../components/texts"
 import { useObserver } from "../common/observer"
 
 const Section = styled.div<{visible: Boolean}>`

@@ -14,7 +14,7 @@ const Section = styled.div<{visible: Boolean}>`
     & > * {
         opacity: ${({ visible }) => (visible ? 1 : 0)};
         transform: ${({ visible }) => visible ? "translateX(0)" : "translateX(3rem)"};    
-        transition: all 3s ease;
+        transition: all 1.5s ease;
     }
 `
 export const Contact = () => {

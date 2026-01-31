@@ -7,10 +7,11 @@ const Section = styled.div<{visible: Boolean}>`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
     & {
         opacity: ${({ visible }) => (visible ? 1 : 0)};
-        transition: all 5s ease;
+        transition: all 2s ease;
     }
 `
 
@@ -23,8 +24,21 @@ const StyledLine = styled.div`
 const KnowledgesBox = styled.div`
     display: flex;
     flex-direction: row;
-    gap: 4rem 10rem;
     flex-wrap: wrap;
+    max-width: 35vw;
+`
+
+const TechLogo = styled.img`
+    margin: 1rem;
+    height: 4rem;
+    width: 4rem;
+
+    transition: all 0.3s ease;
+
+    &:hover {
+        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9));
+        transform: scale(1.05);
+    }
 `
 
 export const Knowledge = () => {
@@ -34,40 +48,20 @@ export const Knowledge = () => {
             <StyledTittle>Knowledges</StyledTittle>
             <StyledLine />
             <KnowledgesBox>
-                <div>
-                    <StyledText>General Knowledges:</StyledText>
-                    <StyledText>
-                        - Github
-                        <br />
-                        - Typescript/Javascript
-                        <br />
-                        - Python
-                        <br />
-                        - Postgresql
-                    </StyledText>
-                </div>
-                <div>
-                    <StyledText>FrontEnd Knowledges:</StyledText>
-                    <StyledText>
-                        - React
-                        <br />
-                        - Redux, axios, and other packages
-                        <br />
-                        - HTTP Requests
-                    </StyledText>
-                </div>
-                <div>
-                    <StyledText>BackEnd Knowledges:</StyledText>
-                    <StyledText>
-                        - FastAPI (Python)
-                        <br />
-                        - express.js
-                        <br />
-                        - DB querys
-                        <br/>
-                        - Basic use of Prisma ORM & Sqlalchemy ORM
-                    </StyledText>
-                </div>
+                <TechLogo src="html.png"/>
+                <TechLogo src='css.png'/>
+                <TechLogo src='javascript.png'/>
+                <TechLogo src='typescript.png'/>
+                <TechLogo src='python.png'/>
+                <TechLogo src="react.png"/>
+                <TechLogo src='node.png'/>
+                <TechLogo src='fastApi.png'/>
+                <TechLogo src='prismaorm.png'/>
+                <TechLogo src='postgresql.png'/>
+                <TechLogo src='git.png'/>
+                <TechLogo src='github.png'/>
+                <TechLogo src='redux.png'/>
+                <TechLogo src='tailwindcss.png'/>
             </KnowledgesBox>
 
         </Section>

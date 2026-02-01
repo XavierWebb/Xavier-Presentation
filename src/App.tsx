@@ -16,7 +16,7 @@ const AppContainer = styled.div`
     margin-left: 0.25rem;
     margin-right: 0.25rem;
     padding-top: 5rem;
-    gap:4rem;
+    gap:10rem;
   }
 `
 

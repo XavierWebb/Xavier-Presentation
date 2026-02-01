@@ -8,7 +8,6 @@ const Section = styled.div<{visible: Boolean}>`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     & {
         opacity: ${({ visible }) => (visible ? 1 : 0)};
         transition: all 2s ease;
@@ -26,6 +25,9 @@ const KnowledgesBox = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     max-width: 35vw;
+    @media (max-width: 768px){
+        max-width: 100%;
+    }
 `
 
 const TechLogo = styled.img`
@@ -38,6 +40,10 @@ const TechLogo = styled.img`
     &:hover {
         filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9));
         transform: scale(1.05);
+    }
+
+    @media (max-width: 768px){
+        margin: 0.25rem;
     }
 `
 

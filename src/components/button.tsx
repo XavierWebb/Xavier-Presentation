@@ -43,6 +43,11 @@ const StyledButton = styled.button<{variant: variantsType}>`
         background-color 0.3s ease,
         color 0.3s ease
     ;
+
+    @media (max-width: 768px) {
+        padding: 0.5rem;
+        font-size: 0.75rem;
+    }
     
     &:hover {
         background-color: ${({variant}) => transitionBackgroundColors[variant]};

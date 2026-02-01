@@ -7,6 +7,9 @@ const StyledImg = styled.img`
     width: 40%;
     border-radius: 15px;   
     border: 2px white solid;
+    @media (max-width:768px){
+        width: 80%;
+    }
 `
 
 const Divisor = styled.div<{visible: Boolean}>`
@@ -16,6 +19,10 @@ const Divisor = styled.div<{visible: Boolean}>`
   align-items: center;
   height: 100vh;
 
+    @media(max-width: 768px){
+        flex-direction: column;
+        gap: 1rem;
+    }
   & > * {
     opacity: ${({ visible }) => (visible ? 1 : 0)};
     transform: ${({ visible }) => visible ? "translateX(0)" : "translateX(-30rem)"};    
@@ -31,6 +38,11 @@ const TextContainer = styled.div`
     align-items: center;
     gap: 3rem;
     margin-bottom: 20vh;
+        @media (max-width: 768px){
+        width: 90%;
+        gap: 0.25rem;
+        text-align: center;
+    }
 `
 
 export const Presentation = () => {

@@ -10,6 +10,14 @@ import { useRef } from 'react'
 const AppContainer = styled.div`
   margin-left: 20rem;
   margin-right: 20rem;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 768px){
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    padding-top: 5rem;
+    gap:4rem;
+  }
 `
 
 function App() {

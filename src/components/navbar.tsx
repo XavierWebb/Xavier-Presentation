@@ -10,6 +10,14 @@ const NavBar = styled.div`
     background-color: #0A0D16;
     box-sizing: border-box;
     z-index: 1;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        padding: 0;
+        z-index: 5;
+        justify-content: start;
+        height: 5rem;
+    }
 `
 interface NavbarProps {
     home: () => void,
@@ -25,6 +33,6 @@ export const Navbar = ({home, presentation, knowledge, contact}: NavbarProps) =>
             <Button variant='second' onClick={presentation}>Presentation</Button>
             <Button variant='second' onClick={knowledge}>Knowledges</Button>
             <Button onClick={contact}>CONTACT ME</Button>
-            </NavBar>
+        </NavBar>
     )
 };

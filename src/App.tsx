@@ -6,6 +6,7 @@ import { Presentation } from './sections/presentation'
 import { Knowledge } from './sections/knowledge'
 import { Contact } from './sections/contact'
 import { useRef } from 'react'
+import { Projects } from './sections/projects'
 
 const AppContainer = styled.div`
   margin-left: 20rem;
@@ -22,6 +23,7 @@ const AppContainer = styled.div`
 
 function App() {
   const homeRef = useRef<HTMLDivElement | null>(null);
+  const projectsRef = useRef<HTMLDivElement | null>(null);
   const presentationRef = useRef<HTMLDivElement | null>(null);
   const knowledgeRef = useRef<HTMLDivElement | null>(null);
   const contactReft = useRef<HTMLDivElement | null>(null);
@@ -40,6 +42,7 @@ function App() {
       />
       <AppContainer>
         <div ref={homeRef}><Home/></div>
+        <div ref={projectsRef}><Projects/></div>
         <div ref={presentationRef}><Presentation/></div>
         <div ref={knowledgeRef}><Knowledge/></div>
         <div ref={contactReft}><Contact/></div>

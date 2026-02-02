@@ -47,11 +47,6 @@ const AppCardCointainer = styled.div`
 
 `
 
-const StyledImg = styled.img`
-    width: 100%;
-    height: 40;
-`
-
 export const Projects = () => {
     const {ref, visible} = useObserver();
 

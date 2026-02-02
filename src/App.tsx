@@ -39,6 +39,7 @@ function App() {
         presentation={()=> scrollTo(presentationRef)}
         knowledge={()=> scrollTo(knowledgeRef)}
         contact={()=> scrollTo(contactReft)}
+        projects={()=> scrollTo(projectsRef)}
       />
       <AppContainer>
         <div ref={homeRef}><Home/></div>

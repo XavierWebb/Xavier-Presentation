@@ -24,12 +24,14 @@ interface NavbarProps {
     presentation: () => void,
     knowledge: () => void,
     contact: () => void,
+    projects: () => void,
 }
 
-export const Navbar = ({home, presentation, knowledge, contact}: NavbarProps) => {
+export const Navbar = ({home, presentation, knowledge, contact, projects}: NavbarProps) => {
     return (
         <NavBar>
             <Button variant='second' onClick={home}>Home</Button>
+            <Button variant='second' onClick={projects}>Projects</Button>
             <Button variant='second' onClick={presentation}>Presentation</Button>
             <Button variant='second' onClick={knowledge}>Knowledges</Button>
             <Button onClick={contact}>CONTACT ME</Button>

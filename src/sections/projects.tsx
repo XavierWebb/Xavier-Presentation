@@ -1,71 +1,87 @@
 import styled from "styled-components"
+import { Section } from "../components/section"
+import { StyledText, StyledTittle, Subtittle } from "../components/texts"
+import { palette } from "../common/styles"
+import { projectsList } from "../common/projectsList"
+import { ProjectCard } from "../components/projectCard"
 import { useObserver } from "../common/observer"
-import { StyledText, StyledTittle } from "../components/texts";
-import { projectsList } from "../common/projectsList";
-import { Button } from "../components/button";
 
-const Divisor = styled.div<{visible: Boolean}>`
+const Line = styled.div`
+    background-color: ${palette.yellow};
+    height: 0.1rem;
+    width: 28rem;
+`
+
+const MyPhoto = styled.img`
+    height: 12rem;
+    width: 12rem;
+    border-radius: 100%;
+`
+
+const InfoContainer = styled.div`
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
     align-items: center;
-    height: 100vh;
-
-    @media(max-width: 768px){
-        gap: 1rem;
-    }
-    & {
-        opacity: ${({ visible }) => (visible ? 1 : 0)};
-        transform: ${({ visible }) =>
-        visible ? "translateY(0)" : "translateY(15rem)"};
-        transition: all 2s ease;
-    }
-`
-
-const AppCard = styled.div`
-    border: white 1px solid;
-    border-radius: 1rem;
-    padding: 2rem;
-    width: 50%;
-
-    @media(max-width:768px){
-        padding: 0.5rem;
-        width: 100%;
-    }
-`
-
-const AppCardCointainer = styled.div`
-    display: flex;
-    flex-direction: row;
     gap: 3rem;
-    width: 100%;
-    max-width: 100%;
-    
-    @media(max-width: 768px){
-        flex-direction: column;
+    margin-bottom: 10rem;
+`
+
+const ProjectsContainer = styled.div<{ $visible: boolean }>`
+    display: flex;
+    gap: 2rem;
+
+    & > * {
+        opacity: 0;
+        transform: translateY(40px);
+        transition:
+            opacity 0.6s ease,
+            transform 0.6s ease;
     }
 
+    ${({$visible}) => 
+        $visible && `
+            & > * {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            & > *:nth-child(1) {transition-delay: 0.1s;}
+            & > *:nth-child(2) {transition-delay: 0.25s;}
+            & > *:nth-child(3) {transition-delay: 0.4s;}
+        `
+    }
+    
 `
+
 
 export const Projects = () => {
     const {ref, visible} = useObserver();
+    return (
+        <Section>
+            <InfoContainer>
+                <MyPhoto src="/Photo.jpeg" />
+                <div>
+                    <Subtittle>Web Developer</Subtittle>
+                    <Line />
+                    <StyledTittle>Xavier Navarro</StyledTittle>
+                    <StyledText>Turning ideas into Visual Experiences</StyledText>
+                </div>
+            </InfoContainer>
 
-    return(
-        <Divisor ref={ref} visible={visible}>
-            <StyledTittle>Projects</StyledTittle>
-            <AppCardCointainer>
-                {projectsList.map((e, i)=>{
+            <StyledText>Main Projects:</StyledText>
+            <ProjectsContainer ref={ref} $visible={visible}>
+                {
+                  projectsList.map((e, i)=> {
                     return(
-                        <AppCard key={i}>
-                            <StyledTittle>{e.name}</StyledTittle>
-                            <StyledText>{e.des}</StyledText>
-                            <Button onClick={()=> {
-                                window.location.href = `${e.link}`
-                            }}>Go</Button>
-                        </AppCard>
+                        <ProjectCard
+                            key={i}
+                            name={e.name}
+                            desc={e.des}
+                            link={e.link}
+                        />
                     )
-                })}
-            </AppCardCointainer>
-        </Divisor>
+                  })  
+                }
+            </ProjectsContainer>
+        </Section>
     )
 }

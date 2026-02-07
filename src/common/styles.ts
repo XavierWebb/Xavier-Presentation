@@ -1,4 +1,4 @@
 export const palette = {
-    purple: '#9CA3DB',
-    purple_darked: '#6B719F',
+    yellow: '#FF9A27',
+    light_yellow: '#FFB259'
 }

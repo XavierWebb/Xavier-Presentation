@@ -1,12 +1,11 @@
-import styled from 'styled-components'
-import './App.css'
-import { Navbar } from './components/navbar'
-import { Home } from './sections/home'
-import { Presentation } from './sections/presentation'
-import { Knowledge } from './sections/knowledge'
-import { Contact } from './sections/contact'
-import { useRef } from 'react'
-import { Projects } from './sections/projects'
+import './App.css';
+import styled from 'styled-components';
+import { Navbar } from './components/navbar';
+import { Projects } from './sections/projects';
+import { Contact } from './sections/contact';
+import { useRef } from 'react';
+import { Stack } from './sections/stack';
+import AnimatedBackground from './components/animatedBackground';
 
 const AppContainer = styled.div`
   margin-left: 20rem;
@@ -22,10 +21,8 @@ const AppContainer = styled.div`
 `
 
 function App() {
-  const homeRef = useRef<HTMLDivElement | null>(null);
   const projectsRef = useRef<HTMLDivElement | null>(null);
-  const presentationRef = useRef<HTMLDivElement | null>(null);
-  const knowledgeRef = useRef<HTMLDivElement | null>(null);
+  const stackRef = useRef<HTMLDivElement | null>(null);
   const contactReft = useRef<HTMLDivElement | null>(null);
 
   const scrollTo = (ref: React.RefObject<HTMLDivElement | null>) => {
@@ -34,18 +31,15 @@ function App() {
 
   return (
     <>
+      <AnimatedBackground/>
       <Navbar
-        home={()=> scrollTo(homeRef)}
-        presentation={()=> scrollTo(presentationRef)}
-        knowledge={()=> scrollTo(knowledgeRef)}
-        contact={()=> scrollTo(contactReft)}
+        stack={()=> scrollTo(stackRef)}
         projects={()=> scrollTo(projectsRef)}
+        contact={()=> scrollTo(contactReft)}
       />
       <AppContainer>
-        <div ref={homeRef}><Home/></div>
         <div ref={projectsRef}><Projects/></div>
-        <div ref={presentationRef}><Presentation/></div>
-        <div ref={knowledgeRef}><Knowledge/></div>
+        <div ref={stackRef}><Stack/></div>
         <div ref={contactReft}><Contact/></div>
       </AppContainer>
     </>

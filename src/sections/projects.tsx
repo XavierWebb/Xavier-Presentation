@@ -10,6 +10,10 @@ const Line = styled.div`
     background-color: ${palette.yellow};
     height: 0.1rem;
     width: 28rem;
+
+    @media(max-width:768px){
+        width: 18rem;
+    }
 `
 
 const MyPhoto = styled.img`
@@ -23,6 +27,11 @@ const InfoContainer = styled.div`
     align-items: center;
     gap: 3rem;
     margin-bottom: 10rem;
+
+    @media (max-width: 768px){
+        flex-direction: column;
+        margin-bottom: 5rem;
+    }
 `
 
 const ProjectsContainer = styled.div<{ $visible: boolean }>`
@@ -49,9 +58,23 @@ const ProjectsContainer = styled.div<{ $visible: boolean }>`
             & > *:nth-child(3) {transition-delay: 0.4s;}
         `
     }
-    
+
+    @media (max-width: 768px){
+        flex-direction: column;
+        align-items: center;
+        gap: 0rem;
+        max-width: 100%
+    }
 `
 
+const MyInfo = styled.div`
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }   
+`
 
 export const Projects = () => {
     const {ref, visible} = useObserver();
@@ -59,12 +82,12 @@ export const Projects = () => {
         <Section>
             <InfoContainer>
                 <MyPhoto src="/Photo.jpeg" />
-                <div>
+                <MyInfo>
                     <Subtittle>Web Developer</Subtittle>
                     <Line />
                     <StyledTittle>Xavier Navarro</StyledTittle>
                     <StyledText>Turning ideas into Visual Experiences</StyledText>
-                </div>
+                </MyInfo>
             </InfoContainer>
 
             <StyledText>Main Projects:</StyledText>

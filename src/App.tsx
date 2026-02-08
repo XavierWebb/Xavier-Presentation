@@ -13,8 +13,8 @@ const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   @media (max-width: 768px){
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
     padding-top: 5rem;
     gap:10rem;
   }

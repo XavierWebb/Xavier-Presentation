@@ -48,7 +48,7 @@ const StyledButton = styled.button<{variant: variantsType}>`
 
     @media (max-width: 768px) {
         padding: 0.5rem;
-        font-size: 0.75rem;
+        font-size: 1rem;
     }
     
     &:hover {

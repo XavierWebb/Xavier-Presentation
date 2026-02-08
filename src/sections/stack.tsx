@@ -14,11 +14,14 @@ const TechImg = styled.img`
         filter: brightness(1.4);
         transform: scale(1.08);
     };
+
+    @media(max-width: 768px){
+        height: 5rem;
+        width: 5rem;
+    }
 `
 
 const TechContainer = styled.div<{ $visible: boolean }>`
-
-
     & > * {
         opacity: 0;
         transform: translateY(40px);
@@ -44,6 +47,12 @@ const TechContainer = styled.div<{ $visible: boolean }>`
             & > *:nth-child(8) {transition-delay: 0.8s;}
         `
     }
+
+    @media(max-width: 768px){
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 `
 
 export const Stack = () => {
@@ -60,6 +69,7 @@ export const Stack = () => {
                         )
                     })
                 }
+                
             </TechContainer>
         </CentralSection>
     )

@@ -20,6 +20,12 @@ const Card = styled.div`
     width: 20rem;
     padding: 1.25rem;
     gap: 2.5rem;
+
+    @media (max-width: 768px) {
+        gap: 1rem;
+        margin-bottom: 1rem;
+        margin-top: 1.25rem;
+    }
 `
 
 export const ProjectCard = ({

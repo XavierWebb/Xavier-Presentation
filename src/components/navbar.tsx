@@ -36,9 +36,14 @@ const WebIcons = styled.img`
 const IconsContainer = styled.div`
     display: flex;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1rem;
     margin-left: auto;
     margin-right: 3rem;
+
+    @media (max-width: 768px){
+        margin-left: 0;
+        margin-right: 0;
+    }
 `
 
 interface NavbarProps {

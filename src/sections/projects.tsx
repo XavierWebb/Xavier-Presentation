@@ -100,6 +100,7 @@ export const Projects = () => {
                             name={e.name}
                             desc={e.des}
                             link={e.link}
+                            star={e.star}
                         />
                     )
                   })  

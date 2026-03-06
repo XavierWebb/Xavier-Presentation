@@ -1,14 +1,16 @@
 import styled from "styled-components"
 import { Button } from "./button"
 import { SmallText, SmallTittle } from "./texts"
+import { palette } from "../common/styles"
 
 interface CardProps {
     name: string,
     desc: string,
-    link: string,  
+    link: string,
+    star: boolean
 };
 
-const Card = styled.div`
+const Card = styled.div<{ $star: boolean }>`
     background-color: #ffffff14;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -21,6 +23,13 @@ const Card = styled.div`
     padding: 1.25rem;
     gap: 2.5rem;
 
+    ${({ $star }) => $star == true && (`
+          box-shadow: 
+            0 0 10px ${palette.light_yellow},
+            0 0 20px ${palette.yellow},
+            0 0 40px ${palette.yellow};
+    `)}
+
     @media (max-width: 768px) {
         gap: 1rem;
         margin-bottom: 1rem;
@@ -31,10 +40,11 @@ const Card = styled.div`
 export const ProjectCard = ({
     name,
     desc,
-    link
-} : CardProps ) => {
+    link,
+    star,
+}: CardProps) => {
     return (
-        <Card>
+        <Card $star={star}>
             <SmallTittle>{name}</SmallTittle>
             <SmallText>{desc}</SmallText>
             <a href={link}><Button>Go</Button></a>
